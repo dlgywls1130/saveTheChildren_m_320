@@ -1,0 +1,1061 @@
+// Reset CSS
+@mixin reset {
+
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+
+    body {
+        line-height: 1;
+    }
+
+    ol,
+    ul {
+        list-style: none;
+    }
+
+    blockquote,
+    q {
+        quotes: none;
+
+        &:before,
+        &:after {
+            content: '';
+            content: none;
+        }
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+}
+
+
+$font-path: '../fonts/';
+
+
+
+
+$font-weights: (
+    'light':200,
+    'regular': 300,
+    'medium': 500,
+    'semi-bold':600,
+    'bold': 700,
+    'extra-bold': 800,
+    'heavy':900,
+);
+
+
+// 폰트 패밀리 변수 설정
+$font-families: (
+  'maru': ('MaruBuri', serif),
+  'nanum': ('NanumSquare', sans-serif),
+  'nanum-neo': ('NanumSquare Neo', sans-serif),
+  'okgung': ('OKGUNG', serif),
+  'malang':('Malang', serif),
+  'gmarket':('Gmarket', serif)
+);
+
+
+// MaruBuri 폰트
+@font-face {
+  font-family: 'MaruBuri';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('#{$font-path}MaruBuri-Regular.woff2') format('woff2'),
+       url('#{$font-path}MaruBuri-Regular.ttf') format('truetype');
+}
+
+// NanumSquare 폰트군
+
+  @font-face {
+    font-family: 'NanumSquare';
+    font-weight: map-get($font-weights, 'regular');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquare_acR.ttf') format('truetype');
+  }
+
+  
+  @font-face {
+    font-family: 'NanumSquare';
+    font-weight: map-get($font-weights, 'bold');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareB.ttf') format('truetype');
+  }
+
+  
+  @font-face {
+    font-family: 'NanumSquare';
+    font-weight: map-get($font-weights, 'extra-bold');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareEB.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'NanumSquare';
+    font-weight: map-get($font-weights, 'light');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareL.ttf') format('truetype');
+  }
+
+// NanumSquare Neo
+@font-face {
+    font-family: 'NanumSquare Neo';
+    font-weight: map-get($font-weights, 'light');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareNeo-aLt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumSquare Neo';
+    font-weight: map-get($font-weights, 'right');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareNeo-bRg.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumSquare Neo';
+    font-weight: map-get($font-weights, 'bold');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareNeo-cBd.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumSquare Neo';
+    font-weight: map-get($font-weights, 'extra-bold');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareNeo-dEb.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'NanumSquare Neo';
+    font-weight: map-get($font-weights, 'heavy');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}NanumSquareNeo-eHv.ttf') format('truetype');
+}
+
+
+// HancomMalangMalang
+@font-face {
+    font-family: 'HancomMalangMalang';
+    font-weight: map-get($font-weights, 'regular');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}HancomMalangMalang-Regular.ttf') format('truetype');
+}
+
+
+
+@font-face {
+    font-family: 'Malang';
+    font-weight: map-get($font-weights, 'bold');
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}HancomMalangMalang-Bold.ttf') format('truetype');
+}
+
+
+
+// OKGUNG 폰트
+@font-face {
+  font-family: 'OKGUNG';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('#{$font-path}OKGUNG.woff2') format('woff2'),
+       url('#{$font-path}OKGUNG.ttf') format('truetype');
+}
+
+// GmarketSans 폰트
+@font-face {
+    font-family: 'Gmarket';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}GmarketSansTTFLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gmarket';
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}GmarketSansTTFMedium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gmarket';
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    src: url('#{$font-path}GmarketSansTTFBold.ttf') format('truetype');
+}
+
+  
+
+@mixin font($family, $size: 16px, $weight: 400) {
+    font-family: map-get($font-families, $family);
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+
+
+
+@mixin font($family, $size: 16px, $weight: 400) {
+    font-family: map-get($font-families, $family);
+    font-size: $size;
+    font-weight: $weight;
+  }
+
+
+
+
+
+// Container
+$container-width: 100%;
+
+// Colors
+$colors: (
+    'gray': #535353,
+    'black': #020202,
+    'brown': #665f5a,
+    'teal': #00b2a9,
+    'red': #ea4120,
+    'bronze': #a56839,
+    'olive': #727464,
+    'sage': #858770
+);
+
+
+$spacing: (
+    '30': 30px,
+    '40': 40px,
+    '50': 50px,
+    '60': 60px,
+    '70': 70px,
+    '75': 75px,
+    '80': 80px,
+    '100': 100px,
+    '120': 120px,
+    '150': 150px,
+    '200': 200px,
+);
+
+$directions: (
+    'p': padding,
+    'm': margin
+);
+
+$sides: (
+    't': top,
+    'b': bottom,
+    'l': left,
+    'r': right,
+    'x': (left, right),
+    'y': (top, bottom)
+);
+
+@each $direction-key, $direction-value in $directions {
+    @each $side-key, $side-value in $sides {
+        @each $space-key, $space-value in $spacing {
+            // 단일 방향
+            @if type-of($side-value) == string {
+                .#{$direction-key}#{$side-key}-#{$space-key} {
+                    #{$direction-value}-#{$side-value}: $space-value;
+                }
+            }
+            // x, y 축 방향
+            @else if type-of($side-value) == list {
+                .#{$direction-key}#{$side-key}-#{$space-key} {
+                    @each $side in $side-value {
+                        #{$direction-value}-#{$side}: $space-value;
+                    }
+                }
+            }
+        }
+    }
+}
+// Container Mixin
+@mixin container {
+    max-width: $container-width;
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+// Apply Reset
+@include reset;
+
+
+// Base Container
+.container {
+    @include container;
+}
+
+// main
+
+html,body{
+    width: 100%;  // 100% 대신 100% 사용
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.main_container {
+    background: url(/images/main_bg.png) no-repeat;
+    width: 100%;
+    position: relative;
+    background-position: top center;
+    height: 1350px;
+    background-size: 100% 95%;
+    overflow-x: hidden;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        .logo_title{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            img{
+                width: 200px;
+                height: auto;
+            }
+
+            p{
+                color: #fff;
+                background: url('/images/botton.png') no-repeat;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 180px;
+                height: 33px;
+                letter-spacing: -0.06em;
+                @include font('nanum', 16px, map-get($font-weights, 'extra-bold'));
+            }
+
+        }
+
+        .sub_title{
+            letter-spacing: -0.03em;
+            color: map-get($colors, 'brown');
+            text-align: center;
+            line-height: 30px;
+            @include font('nanum-neo', 20px, map-get($font-weights, 'heavy'));
+        }
+
+        h2{
+            line-height: 60px;
+            letter-spacing: -0.03em;
+            color: map-get($colors, 'black');
+            @include font('okgung', 50px, map-get($font-weights, 'regular'));
+            text-align: center;
+        }
+
+        .sub_span_text{
+            color: map-get($colors, 'brown');
+            letter-spacing: -0.03em;
+            line-height: 35px;
+            @include font('nanum-neo', 25px, map-get($font-weights, 'bold'));
+            text-align: center;
+        }
+
+        .sub_descript{
+            line-height: 30px;
+            letter-spacing: -0.03em;
+            color: map-get($colors, 'brown');
+            @include font('nanum-neo', 20px, map-get($font-weights, 'regular'));
+            text-align: center;
+        }
+
+
+    }
+
+    .record_btn{
+        background-color: map-get($colors, 'teal' );
+        width: 100%;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+        position: absolute;
+        bottom: 0;
+        img{
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        p{
+            display: block;
+            color: #fff;
+            @include font('nanum-neo', 20px, map-get($font-weights, 'extra-bold'));
+        }
+    }
+}
+
+
+
+// story
+
+.story_section{
+    background: url('/images/story_bg.jpg') no-repeat;
+    width: 100%;
+    // height: 100%;
+    background-size: cover;
+
+    .container{
+
+        .video_container {
+
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            box-sizing: border-box;
+            video{
+                background-color: #000;
+                width: 100%;
+                height: 168px;  // 원하는 높이
+            }
+
+        }
+
+        .story_01{
+            .s01{
+                @include font('maru', 20px, map-get($font-weights, 'regular'));
+                color: #000;
+                line-height: 30px;
+                letter-spacing: -0.06em;
+                text-align: center;
+            }
+
+            .s01_1{
+                @include font('maru', 20px, map-get($font-weights, 'regular'));
+                color: map-get($colors, 'red');
+                text-align: center;
+                line-height: 30px;
+                letter-spacing: -0.06em;
+            }
+
+            .s01_2{
+                @include font('maru', 20px, map-get($font-weights, 'regular'));
+                color: #000;
+                line-height: 30px;
+                letter-spacing: -0.06em;
+                text-align: center;
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .story_02{
+            .story_02_01{
+                display: flex;
+                flex-direction: column;
+                padding: 0 20px;
+                box-sizing: border-box;
+                .story_image{
+                    width: 100%;
+                    height: auto;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        
+                    }
+                }
+
+                .story_text-contain{
+                    
+
+                    .story_text_01{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: map-get($colors, 'bronze' );
+                        @include font('maru', 25px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_02{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: #000;
+                        @include font('maru', 20px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_03{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: map-get($colors, 'bronze' );
+                        @include font('maru', 25px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_04{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: #000;
+                        @include font('maru',20px, map-get($font-weights, 'regular'));
+                    }
+                    
+                }
+            }
+        }
+
+        .story_03{
+            .story_03_01{
+                display: flex;
+                flex-direction: column;
+
+                .story_image{
+                    width: 100%;
+                    height: auto;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        
+                    }
+                }
+
+                .story_text-contain{
+                    .story_text_01{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: map-get($colors, 'olive' );
+                        @include font('maru', 25px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_02{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: #000;
+                        @include font('maru', 20px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_03{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: map-get($colors, 'olive' );
+                        @include font('maru', 25px, map-get($font-weights, 'regular'));
+
+                    }
+                }
+            }
+        }
+
+        .story_04{
+            .story04_01{
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                
+                .story_image{
+                    width: 100%;
+                    height: auto;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .story_text-contain{
+                    .story_text_01{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: map-get($colors, 'olive' );
+                        @include font('maru', 25px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_02{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: #000;
+                        @include font('maru', 20px, map-get($font-weights, 'regular'));
+                    }
+                }
+            }
+
+            .story04_02{
+                display: flex;
+                flex-direction: column;
+                .story_image{
+                    width: 100%;
+                    height: auto;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+                .story_text-contain{
+                    .story_text_01{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: map-get($colors, 'bronze' );
+                        @include font('maru', 25px, map-get($font-weights, 'regular'));
+                    }
+
+                    .story_text_02{
+                        text-align: center;
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        color: #000;
+                        @include font('maru', 20px, map-get($font-weights, 'regular'));
+                        span{
+                            color: map-get($colors, 'bronze' );
+                        }
+                    }
+                }
+            }
+        }
+
+        .story_05{
+            padding: 0 32px;
+            box-sizing: border-box;
+            .story_05_01{
+                background: #fff;
+                width: 100%;
+                box-shadow: 10px 9px 20px 2px rgba(0,0,0,0.3);
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                box-sizing: border-box;
+
+                .img_story{
+                    width: 100%;
+                    height: auto;
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                .story_text{
+                    @include font('maru', 20px, map-get($font-weights, 'regular'));
+                    color: map-get($colors, 'sage' );
+                    letter-spacing: -0.06em;
+                    line-height: 30px;
+                    text-align: center;
+                }
+            }
+
+
+            .story_05_02{
+                background: #fff;
+                width: 100%;
+                box-shadow: 10px 9px 20px 2px rgba(0,0,0,0.3);
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                position: relative;
+                box-sizing: border-box;
+
+                .img_story{
+                    width: 100%;
+                    height: auto;
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                .story_text{
+                    @include font('maru', 20px, map-get($font-weights, 'regular'));
+                    color: map-get($colors, 'bronze' );
+                    letter-spacing: -0.06em;
+                    line-height: 30px;
+                    text-align: center;
+                }
+            }
+
+            .middle_cotain{
+                p{
+                    @include font('nanum-neo', 20px, map-get($font-weights, 'bold'));
+                    line-height: 30px;
+                    letter-spacing: -0.06em;
+                    color: #000;
+                    text-align: center;
+
+                    span{
+                        font-weight: 800;
+                    }
+                }
+
+                
+                .middle_image{
+                    display: flex;
+                    align-items: center;
+                    gap: 80px;
+                    position: relative;
+                    .middel_left{
+                        width: 48%;
+                        height: auto;
+                    }
+
+                    .middel_right{
+                        width: 48%;
+                        height: auto;
+                    }
+
+                }
+
+
+            }
+
+        }
+
+        .middle-slide{
+            .swiper-pagination-bullet-active{
+                background: #000;
+            }
+
+            .swiper-pagination-bullet{
+                background: rgba(0,0,0,0.5);
+            }
+        }
+    }
+
+
+    
+    .record_btn{
+        background-color: map-get($colors, 'teal' );
+        width: 100%;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-decoration: none;
+        box-sizing: border-box;
+        margin: 0 auto;
+
+        img{
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        p{
+            display: block;
+            color: #fff;
+            @include font('nanum-neo', 20px, map-get($font-weights, 'extra-bold'));
+        }
+    }
+}
+
+// 후원신청
+
+.sponsor_section{
+    background: url('/images/info_bg.jpg') no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: relative;
+    .container{
+        .sponsor-container{
+            padding: 0 32px;
+            box-sizing: border-box;
+            h2{
+                @include font('malang', 30px, map-get($font-weights, 'bold'));
+                color: #000;
+                letter-spacing: -0.05rem;
+                text-align: center;
+            }
+
+            .sponsor_list{
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                background-color: #fff;
+                position: relative;
+                box-sizing: border-box;
+                padding: 50px 0;
+                row-gap: 30px;
+                .sponsor_list_inner{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    width: 100%;
+                    position: relative;
+                    @include font('gmarket', 30px, map-get($font-weights, 'bold'));
+                    &:nth-child(1)::before,
+                    &:nth-child(2)::before,
+                    &:nth-child(3)::before,
+                    &:nth-child(4)::before {
+                        position: absolute;
+                        top: -10px;
+                        left: 0;
+                        font-size: 24px;
+                        font-weight: bold;
+                        z-index: 1;
+                    }
+            
+                    &:nth-child(1)::before { content: '1'; }
+                    &:nth-child(2)::before { content: '2'; }
+                    &:nth-child(3)::before { content: '3'; }
+                    &:nth-child(4)::before { content: '4'; }
+
+
+                    .list-inner-img{
+                        width: 200px;
+                        height: 200px;
+                        
+                        img{
+                            width: 100%;
+                        }
+                    }
+
+                    p{
+                        @include font('nanum-neo', 20px, map-get($font-weights, 'bold'));
+                        text-align: center;
+                        line-height: 35px;
+                        letter-spacing: -0.06em;
+                    }
+
+                    
+                }
+
+            }
+
+            .info-span{
+                @include font('nanum-neo', 20px, map-get($font-weights, 'regular'));
+                letter-spacing: -0.06rem;
+                line-height: 30px;
+                text-align: center;
+            }
+        }
+
+        .sponsor-inner{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            h2{
+                @include font('malang', 30px, map-get($font-weights, 'bold'));
+                color: #000;
+                letter-spacing: -0.05rem;
+                text-align: center;
+            }
+
+            p{
+                @include font('nanum-neo', 20px, map-get($font-weights, 'regular'));
+                line-height: 30px;
+                letter-spacing: -0.06em;
+                text-align: center;
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .faq_section{
+            padding: 0 32px;
+            box-sizing: border-box;
+            h2{
+                @include font('malang', 30px, map-get($font-weights, 'bold'));
+                letter-spacing: -0.05em;
+                text-align: center;
+            }
+
+            .faq_list{
+                li{
+                    background-color: #fff;
+                    padding: 30px 24px;
+                    width: 100%;
+                    margin-bottom: 40px;
+                    .faq_question{
+                        text-align: center;
+                        padding: 30px 0;
+                        border-bottom: 1px solid #000;
+
+                        p{
+                            @include font('nanum-neo', 20px, map-get($font-weights, 'extra-bold'));
+                            letter-spacing: -0.05em;
+                            line-height: 30px;
+                        }
+                    }
+
+                    .faq_answer{
+                        padding: 35px 0 20px;
+                        @include font('nanum-neo', 20px, map-get($font-weights, 'light'));
+                        line-height: 30px;
+                        letter-spacing: -0.06em;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .record_btn{
+        background-color: map-get($colors, 'red');
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        gap: 10px;
+        justify-content: center;
+        .pencle-img{
+            width: 30px;
+            height: 30px;
+            display: block;
+        }
+
+        p{
+            display: block;
+            color: #fff;
+            @include font('nanum-neo', 25px, map-get($font-weights, 'extra-bold'));
+        }
+
+        .float_image{
+            margin-top: -6%;
+            width: 185px;
+            height: auto;
+        }
+    }
+}
