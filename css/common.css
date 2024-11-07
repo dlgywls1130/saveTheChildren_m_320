@@ -937,16 +937,20 @@ html, body {
   background-size: cover;
 }
 .story_section .container .video_container {
+  position: relative;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
-  box-sizing: border-box;
+  padding-top: 56%;
+  height: 0;
 }
-.story_section .container .video_container video {
-  background-color: #000;
+.story_section .container .video_container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 168px;
+  height: 100%;
 }
 .story_section .container .story_01 .s01 {
   font-family: "MaruBuri", serif;
@@ -1403,6 +1407,9 @@ html, body {
   text-decoration: none;
   gap: 10px;
   justify-content: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
 }
 .sponsor_section .record_btn .pencle-img {
   width: 25px;
