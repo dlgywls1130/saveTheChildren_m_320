@@ -833,9 +833,9 @@ html, body {
   background: url(../images/main_bg.png) no-repeat;
   width: 100%;
   position: relative;
-  background-position: top center;
+  background-position: bottom center;
   height: 1350px;
-  background-size: 100% 95%;
+  background-size: 100%;
   overflow-x: hidden;
 }
 .main_container .container {
