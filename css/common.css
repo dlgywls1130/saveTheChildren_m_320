@@ -1410,6 +1410,7 @@ html, body {
   position: fixed;
   left: 0;
   bottom: 0;
+  z-index: 99;
 }
 .sponsor_section .record_btn .pencle-img {
   width: 25px;
